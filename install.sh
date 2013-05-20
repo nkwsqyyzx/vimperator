@@ -7,7 +7,7 @@ function install_vimperator_plugin()
     cd ~ && /usr/bin/env git clone https://github.com/nkwsqyyzx/vimperator.git $dir &
     wait $!
 
-    for f in $dir;do cp -r $f ~/vimperator/;done
+    for f in $(ls $dir);do mv $dir/$f ~/.vimperator/;done
     rm -rf $dir
     echo "done!"
 }
